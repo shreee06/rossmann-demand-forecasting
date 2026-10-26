@@ -8,3 +8,4 @@ lightgbm==4.7.0
 plotly==7.1.0
 streamlit==1.65.0
 pytest==9.1.1
+matplotlib==3.10.9

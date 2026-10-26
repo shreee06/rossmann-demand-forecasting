@@ -353,3 +353,6 @@ run_id,stage,baseline,params,split,n_rows,rmspe,wape,mase,bias,runtime_s,status,
 20261026T220730,final-train,lgbm_final_full,"{""num_leaves"": 63, ""min_child_samples"": 50, ""trees"": 1106}",train<=2015-06-19,841053,,,,,98.8,final,frozen config and tree count; no early stopping
 20261026T220730,final-train,lgbm_final_q10,"{""num_leaves"": 63, ""min_child_samples"": 50, ""trees"": 1500}",train<=2015-06-19,841053,,,,,137.8,final,frozen config and tree count; no early stopping
 20261026T220730,final-train,lgbm_final_q90,"{""num_leaves"": 63, ""min_child_samples"": 50, ""trees"": 206}",train<=2015-06-19,841053,,,,,25.9,final,frozen config and tree count; no early stopping
+20261026T221206,final-test,full,frozen,test,40282,0.11738,0.0810274,0.293717,0.0151742,,test,single TEST run
+20261026T221206,final-test,baseline,frozen,test,40282,0.156784,0.110527,0.400034,0.0396826,,test,single TEST run
+20261026T221206,final-test,snaive14,frozen,test,40282,0.147544,0.106061,0.386244,0.00148138,,test,single TEST run

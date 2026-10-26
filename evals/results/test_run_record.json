@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-10-26T22:12:08",
+  "git_commit": "87681ba37c00ad5f49fea34a3bf5f24d191b0dca",
+  "working_tree_clean": true,
+  "config_sha256": "5ae5127a4b7ab4084df99a5af635accc26ea9fa245def35eda107ac06e22147c",
+  "calibration_factors_sha256": "a0962beab757035e591dffc544c10ba37788410685567adef167e3a854492f08",
+  "window": [
+    "2015-06-20",
+    "2015-07-31"
+  ],
+  "cutoff": "2015-06-19",
+  "n_evaluated_rows": 40282,
+  "seeds": {
+    "bootstrap": 20260101,
+    "subsample": 20260101
+  },
+  "frozen_trees": {
+    "full": 1106,
+    "q10": 1500,
+    "q90": 206
+  }
+}
