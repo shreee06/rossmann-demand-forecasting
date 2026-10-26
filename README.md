@@ -112,6 +112,25 @@ Rossmann chose when promotions ran (they alternate by week), so these are adjust
 - **Data gap:** 180 stores have no rows from July to December 2014; why is not in the data.
 - Bootstrap CIs capture store sampling only; fold-to-fold variation in the backtest is much larger.
 
+## App screenshots
+
+Local Streamlit app (`streamlit run app/app.py`); it reads only the aggregate files in `evals/results/`. The store-level viewer tab needs the Kaggle data on your own machine and is deliberately not pictured.
+
+![Comparison tab: TEST, VALIDATION and backtest metrics with 95% CIs.](docs/images/app_comparison.png)
+*Comparison tab: TEST, VALIDATION and backtest metrics with 95% CIs.*
+
+![Error by horizon: WAPE per 7-day bucket on TEST and in the backtest.](docs/images/app_error_by_horizon.png)
+*Error by horizon: WAPE per 7-day bucket on TEST and in the backtest.*
+
+![Promo vs non-promo days and store types on TEST (forecast error, not promotion effects).](docs/images/app_promo_and_store_type.png)
+*Promo vs non-promo days and store types on TEST (forecast error, not promotion effects).*
+
+![Interval coverage and width, uncalibrated and calibrated, across backtest, VALIDATION and TEST.](docs/images/app_intervals.png)
+*Interval coverage and width, uncalibrated and calibrated, across backtest, VALIDATION and TEST.*
+
+![Limitations panel shown in the app.](docs/images/app_limitations.png)
+*Limitations panel shown in the app.*
+
 ## Reproduce
 
 ```bash

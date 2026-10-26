@@ -10,6 +10,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 RES = ROOT / "evals" / "results"
 M = ["rmspe", "wape", "mase", "bias"]
+SCREENSHOTS = [
+    ("app_comparison.png", "Comparison tab: TEST, VALIDATION and backtest metrics with 95% CIs."),
+    ("app_error_by_horizon.png", "Error by horizon: WAPE per 7-day bucket on TEST and in the backtest."),
+    ("app_promo_and_store_type.png", "Promo vs non-promo days and store types on TEST (forecast error, not promotion effects)."),
+    ("app_intervals.png", "Interval coverage and width, uncalibrated and calibrated, across backtest, VALIDATION and TEST."),
+    ("app_limitations.png", "Limitations panel shown in the app."),
+]
 
 
 def j(name):
@@ -169,6 +176,14 @@ def render() -> str:
     add("- **Open flag assumed known** for the forecast days: closed days are forecast as 0 and excluded, so unplanned closures are not evaluated.")
     add(f"- **Data gap:** {cov['max_stores_missing_on_one_date']} stores have no rows from July to December 2014; why is not in the data.")
     add("- Bootstrap CIs capture store sampling only; fold-to-fold variation in the backtest is much larger.\n")
+
+    add("## App screenshots\n")
+    add("Local Streamlit app (`streamlit run app/app.py`); it reads only the aggregate files in `evals/results/`. The store-level viewer tab "
+        "needs the Kaggle data on your own machine and is deliberately not pictured.\n")
+    for fname, caption in SCREENSHOTS:
+        if not (ROOT / "docs" / "images" / fname).exists():
+            raise FileNotFoundError(fname)
+        add(f"![{caption}](docs/images/{fname})\n*{caption}*\n")
 
     add("## Reproduce\n")
     add("```bash\npython3 -m venv .venv && .venv/bin/pip install -r requirements.txt\nexport ROSSMANN_RAW_DIR=/path/to/rossmann-raw\n"
