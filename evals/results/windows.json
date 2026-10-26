@@ -1,0 +1,100 @@
+{
+  "unit": "calendar days",
+  "data_start": "2013-01-01",
+  "data_end": "2015-07-31",
+  "test_days": 42,
+  "validation_days": 42,
+  "windows": {
+    "train": {
+      "start": "2013-01-01",
+      "end": "2015-05-08",
+      "n_days": 858,
+      "n_rows": 923549
+    },
+    "validation": {
+      "start": "2015-05-09",
+      "end": "2015-06-19",
+      "n_days": 42,
+      "n_rows": 46830
+    },
+    "test": {
+      "start": "2015-06-20",
+      "end": "2015-07-31",
+      "n_days": 42,
+      "n_rows": 46830
+    }
+  },
+  "backtest": {
+    "scheme": "rolling origin, expanding train window (dates <= cutoff), horizon forecast right after cutoff",
+    "horizon_days": 42,
+    "step_days": 42,
+    "span_days": 364,
+    "n_folds": 8,
+    "folds": [
+      {
+        "fold": 1,
+        "cutoff": "2014-06-06",
+        "horizon_start": "2014-06-07",
+        "horizon_end": "2014-07-18",
+        "n_train_rows": 582029,
+        "n_horizon_rows": 43590
+      },
+      {
+        "fold": 2,
+        "cutoff": "2014-07-18",
+        "horizon_start": "2014-07-19",
+        "horizon_end": "2014-08-29",
+        "n_train_rows": 625619,
+        "n_horizon_rows": 39270
+      },
+      {
+        "fold": 3,
+        "cutoff": "2014-08-29",
+        "horizon_start": "2014-08-30",
+        "horizon_end": "2014-10-10",
+        "n_train_rows": 664889,
+        "n_horizon_rows": 39270
+      },
+      {
+        "fold": 4,
+        "cutoff": "2014-10-10",
+        "horizon_start": "2014-10-11",
+        "horizon_end": "2014-11-21",
+        "n_train_rows": 704159,
+        "n_horizon_rows": 39270
+      },
+      {
+        "fold": 5,
+        "cutoff": "2014-11-21",
+        "horizon_start": "2014-11-22",
+        "horizon_end": "2015-01-02",
+        "n_train_rows": 743429,
+        "n_horizon_rows": 39630
+      },
+      {
+        "fold": 6,
+        "cutoff": "2015-01-02",
+        "horizon_start": "2015-01-03",
+        "horizon_end": "2015-02-13",
+        "n_train_rows": 783059,
+        "n_horizon_rows": 46830
+      },
+      {
+        "fold": 7,
+        "cutoff": "2015-02-13",
+        "horizon_start": "2015-02-14",
+        "horizon_end": "2015-03-27",
+        "n_train_rows": 829889,
+        "n_horizon_rows": 46830
+      },
+      {
+        "fold": 8,
+        "cutoff": "2015-03-27",
+        "horizon_start": "2015-03-28",
+        "horizon_end": "2015-05-08",
+        "n_train_rows": 876719,
+        "n_horizon_rows": 46830
+      }
+    ]
+  }
+}

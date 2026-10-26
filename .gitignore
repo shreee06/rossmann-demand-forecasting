@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.env
+data/
+models/
+*.parquet
+*.npz
+*.csv
+!evals/results/*.csv
+*.pkl
+*.pt
+.pytest_cache/
+*.log

@@ -1,0 +1,2619 @@
+{
+  "provenance": {
+    "raw_dir": "$ROSSMANN_RAW_DIR",
+    "train_csv_sha256": "f6e4597c142d7d909a13d53b68a8e85c00b9a4c7b5ff40adbb37d6829cc1f4cc",
+    "store_csv_sha256": "f56bd124a2849489e6bbb5c000f5fc9640204355e316475c918ae4d089afb344",
+    "python": "3.10.12",
+    "pandas": "2.3.3",
+    "numpy": "2.2.6",
+    "sales_scope": "rows with Date < 2015-06-20 (before TEST window)",
+    "peak_rss_mb": 348
+  },
+  "windows": {
+    "train": {
+      "start": "2013-01-01",
+      "end": "2015-05-08"
+    },
+    "validation": {
+      "start": "2015-05-09",
+      "end": "2015-06-19"
+    },
+    "test": {
+      "start": "2015-06-20",
+      "end": "2015-07-31"
+    }
+  },
+  "reconciliation": {
+    "train": {
+      "all_match": true,
+      "checks": {
+        "rows": {
+          "source": 1017209,
+          "processed": 1017209,
+          "match": true
+        },
+        "sales_sum": {
+          "source": 5873180623,
+          "processed": 5873180623,
+          "match": true
+        },
+        "customers_sum": {
+          "source": 644041755,
+          "processed": 644041755,
+          "match": true
+        },
+        "open_sum": {
+          "source": 844392,
+          "processed": 844392,
+          "match": true
+        },
+        "promo_sum": {
+          "source": 388080,
+          "processed": 388080,
+          "match": true
+        },
+        "school_holiday_sum": {
+          "source": 181721,
+          "processed": 181721,
+          "match": true
+        },
+        "state_holiday_counts": {
+          "source": {
+            "0": 986159,
+            "a": 20260,
+            "b": 6690,
+            "c": 4100
+          },
+          "processed": {
+            "0": 986159,
+            "a": 20260,
+            "b": 6690,
+            "c": 4100
+          },
+          "match": true
+        },
+        "n_stores": {
+          "source": 1115,
+          "processed": 1115,
+          "match": true
+        },
+        "date_min": {
+          "source": "2013-01-01",
+          "processed": "2013-01-01",
+          "match": true
+        },
+        "date_max": {
+          "source": "2015-07-31",
+          "processed": "2015-07-31",
+          "match": true
+        }
+      }
+    },
+    "train_csv_line_records": 1017209,
+    "train_pandas_rows": 1017209,
+    "store_csv_line_records": 1115,
+    "store_pandas_rows": 1115,
+    "store_match": true,
+    "all_match": true
+  },
+  "coverage": {
+    "rows": 1017209,
+    "n_stores": 1115,
+    "date_min": "2013-01-01",
+    "date_max": "2015-07-31",
+    "n_days": 942,
+    "expected_store_days": 1050330,
+    "missing_store_days": 33121,
+    "missing_share": 0.03153389886987899,
+    "duplicate_store_date_rows": 0,
+    "stores_with_any_missing_day": 181,
+    "stores_with_no_missing_day": 934,
+    "max_missing_days_in_one_store": 184,
+    "dates_with_any_missing_store": 185,
+    "max_stores_missing_on_one_date": 180,
+    "dayofweek_consistent_with_date": true,
+    "stores_in_train_not_in_store_csv": 0,
+    "stores_in_store_csv_not_in_train": 0,
+    "missing_by_month": {
+      "2013-01": 1,
+      "2014-07": 5580,
+      "2014-08": 5580,
+      "2014-09": 5400,
+      "2014-10": 5580,
+      "2014-11": 5400,
+      "2014-12": 5580
+    }
+  },
+  "closed_days": {
+    "open_zero_rows": 172817,
+    "open_zero_share_of_rows": 0.16989330609540418,
+    "open_zero_sales_sum": 0,
+    "open_zero_rows_with_positive_sales": 0,
+    "open_zero_by_dayofweek": {
+      "1": 7170,
+      "2": 1703,
+      "3": 3729,
+      "4": 11201,
+      "5": 7205,
+      "6": 672,
+      "7": 141137
+    },
+    "open_zero_on_state_holiday_rows": 30140,
+    "open_zero_on_school_holiday_rows": 18264,
+    "open_rows": 844392,
+    "open_rows_with_zero_sales": 54,
+    "open_rows_with_zero_sales_share_of_open": 6.395134013586107e-05,
+    "open_rows_with_zero_sales_n_stores": 41,
+    "open_rows_with_zero_sales_by_year": {
+      "2013": 19,
+      "2014": 32,
+      "2015": 3
+    },
+    "open_rows_with_zero_sales_customers_sum": 8,
+    "closed_rows_with_nonzero_customers": 0
+  },
+  "long_closures": {
+    "min_run_days": 30,
+    "n_runs": 189,
+    "n_stores": 189,
+    "longest_run_days": 185,
+    "runs_that_are_entirely_missing_rows": 1,
+    "runs_that_are_entirely_closed_rows": 9,
+    "runs_touching_data_end": 0,
+    "runs_touching_data_start": 3,
+    "top_clusters_same_start_end": [
+      {
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "n_stores": 179
+      },
+      {
+        "start": "2013-01-01",
+        "end": "2013-07-04",
+        "n_stores": 2
+      },
+      {
+        "start": "2013-01-01",
+        "end": "2013-04-11",
+        "n_stores": 1
+      },
+      {
+        "start": "2013-01-03",
+        "end": "2013-02-14",
+        "n_stores": 1
+      },
+      {
+        "start": "2014-01-17",
+        "end": "2014-02-20",
+        "n_stores": 1
+      },
+      {
+        "start": "2013-05-05",
+        "end": "2013-06-04",
+        "n_stores": 1
+      },
+      {
+        "start": "2014-05-07",
+        "end": "2014-07-31",
+        "n_stores": 1
+      },
+      {
+        "start": "2014-07-01",
+        "end": "2014-12-31",
+        "n_stores": 1
+      },
+      {
+        "start": "2014-07-04",
+        "end": "2014-09-30",
+        "n_stores": 1
+      },
+      {
+        "start": "2015-02-15",
+        "end": "2015-03-25",
+        "n_stores": 1
+      }
+    ],
+    "by_start_year_month": {
+      "2013-01": 4,
+      "2013-05": 1,
+      "2014-01": 1,
+      "2014-05": 1,
+      "2014-07": 181,
+      "2015-02": 1
+    },
+    "runs": [
+      {
+        "store": 13,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 20,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 22,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 32,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 36,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 41,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 46,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 51,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 52,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 58,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 72,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 76,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 81,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 89,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 99,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 100,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 103,
+        "start": "2013-01-01",
+        "end": "2013-07-04",
+        "length": 185,
+        "missing_days": 0,
+        "closed_rows": 185,
+        "touches_data_start": true,
+        "touches_data_end": false
+      },
+      {
+        "store": 108,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 113,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 115,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 127,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 129,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 132,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 136,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 137,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 139,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 144,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 145,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 149,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 155,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 159,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 164,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 165,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 172,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 174,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 181,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 183,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 186,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 190,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 191,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 192,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 204,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 215,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 218,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 231,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 243,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 258,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 263,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 275,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 277,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 279,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 283,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 284,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 287,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 288,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 298,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 306,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 317,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 342,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 345,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 348,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 349,
+        "start": "2013-01-01",
+        "end": "2013-04-11",
+        "length": 101,
+        "missing_days": 0,
+        "closed_rows": 101,
+        "touches_data_start": true,
+        "touches_data_end": false
+      },
+      {
+        "store": 365,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 385,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 399,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 407,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 412,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 413,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 420,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 427,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 428,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 429,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 430,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 434,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 457,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 471,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 477,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 485,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 490,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 492,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 498,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 500,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 501,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 512,
+        "start": "2014-07-01",
+        "end": "2014-12-31",
+        "length": 184,
+        "missing_days": 184,
+        "closed_rows": 0,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 514,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 518,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 522,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 534,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 539,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 540,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 542,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 547,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 555,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 560,
+        "start": "2013-01-03",
+        "end": "2013-02-14",
+        "length": 43,
+        "missing_days": 0,
+        "closed_rows": 43,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 571,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 573,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 575,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 587,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 598,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 604,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 611,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 612,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 619,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 620,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 629,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 633,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 636,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 637,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 638,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 644,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 646,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 650,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 660,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 669,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 670,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 671,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 674,
+        "start": "2015-02-15",
+        "end": "2015-03-25",
+        "length": 39,
+        "missing_days": 0,
+        "closed_rows": 39,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 677,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 684,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 694,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 700,
+        "start": "2013-05-05",
+        "end": "2013-06-04",
+        "length": 31,
+        "missing_days": 0,
+        "closed_rows": 31,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 701,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 702,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 706,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 708,
+        "start": "2014-07-04",
+        "end": "2014-09-30",
+        "length": 89,
+        "missing_days": 0,
+        "closed_rows": 89,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 710,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 711,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 712,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 716,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 719,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 736,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 739,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 744,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 750,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 766,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 771,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 775,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 778,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 797,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 804,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 805,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 806,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 815,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 820,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 825,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 837,
+        "start": "2014-01-17",
+        "end": "2014-02-20",
+        "length": 35,
+        "missing_days": 0,
+        "closed_rows": 35,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 842,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 851,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 858,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 859,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 879,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 884,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 890,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 893,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 900,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 902,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 903,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 904,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 909,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 915,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 919,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 920,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 932,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 941,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 952,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 972,
+        "start": "2014-05-07",
+        "end": "2014-07-31",
+        "length": 86,
+        "missing_days": 0,
+        "closed_rows": 86,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 974,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 977,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 989,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 1000,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 1004,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 1009,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 1012,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 1019,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 1027,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 1038,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 1041,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 1049,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 1056,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 1065,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 1067,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 1080,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 1081,
+        "start": "2013-01-01",
+        "end": "2013-07-04",
+        "length": 185,
+        "missing_days": 0,
+        "closed_rows": 185,
+        "touches_data_start": true,
+        "touches_data_end": false
+      },
+      {
+        "store": 1092,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 1094,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 1102,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 1104,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 1107,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      },
+      {
+        "store": 1109,
+        "start": "2014-07-01",
+        "end": "2015-01-01",
+        "length": 185,
+        "missing_days": 184,
+        "closed_rows": 1,
+        "touches_data_start": false,
+        "touches_data_end": false
+      }
+    ]
+  },
+  "sales_distribution": {
+    "overall_open_positive": {
+      "n": 804056,
+      "mean": 6954.82295387386,
+      "std": 3106.25258134194,
+      "min": 46.0,
+      "p1": 2185.0,
+      "p5": 3170.0,
+      "p25": 4856.0,
+      "p50": 6368.0,
+      "p75": 8360.0,
+      "p95": 12671.0,
+      "p99": 17803.0,
+      "max": 38722.0
+    },
+    "DayOfWeek": [
+      {
+        "DayOfWeek": 1,
+        "rows": 138040,
+        "open_share": 0.9481164879745001,
+        "mean_sales_all_rows": 7789.81055491162,
+        "open_rows_positive_sales": 130875,
+        "mean": 8216.278502387775,
+        "median": 7538.0,
+        "std": 3700.1270847555566,
+        "p05": 3662.0,
+        "p95": 15047.0,
+        "n_stores": 1115
+      },
+      {
+        "DayOfWeek": 2,
+        "rows": 138974,
+        "open_share": 0.9878034740311137,
+        "mean_sales_all_rows": 6990.017139896671,
+        "open_rows_positive_sales": 137273,
+        "mean": 7076.633001391388,
+        "median": 6495.0,
+        "std": 3057.2995787224563,
+        "p05": 3380.0,
+        "p95": 12668.0,
+        "n_stores": 1115
+      },
+      {
+        "DayOfWeek": 3,
+        "rows": 138975,
+        "open_share": 0.9732254002518439,
+        "mean_sales_all_rows": 6543.8651196258315,
+        "open_rows_positive_sales": 135240,
+        "mean": 6724.590764566697,
+        "median": 6204.0,
+        "std": 2783.1346999683556,
+        "p05": 3380.0,
+        "p95": 11771.0,
+        "n_stores": 1115
+      },
+      {
+        "DayOfWeek": 4,
+        "rows": 139155,
+        "open_share": 0.9195788868527901,
+        "mean_sales_all_rows": 6221.2760950019765,
+        "open_rows_positive_sales": 127946,
+        "mean": 6766.305120910384,
+        "median": 6243.0,
+        "std": 2771.1010014060494,
+        "p05": 3454.0,
+        "p95": 11806.0,
+        "n_stores": 1115
+      },
+      {
+        "DayOfWeek": 5,
+        "rows": 139155,
+        "open_share": 0.9482878804211131,
+        "mean_sales_all_rows": 6709.536509647515,
+        "open_rows_positive_sales": 131952,
+        "mean": 7075.796903419426,
+        "median": 6584.0,
+        "std": 2766.2789705750233,
+        "p05": 3695.0,
+        "p95": 12002.0,
+        "n_stores": 1115
+      },
+      {
+        "DayOfWeek": 6,
+        "rows": 138040,
+        "open_share": 0.9951898000579542,
+        "mean_sales_all_rows": 5857.735540423066,
+        "open_rows_positive_sales": 137370,
+        "mean": 5886.3056999344835,
+        "median": 5434.0,
+        "std": 2862.4273532875163,
+        "p05": 2317.0,
+        "p95": 10998.0,
+        "n_stores": 1115
+      },
+      {
+        "DayOfWeek": 7,
+        "rows": 138040,
+        "open_share": 0.024630541871921183,
+        "mean_sales_all_rows": 202.1757244277021,
+        "open_rows_positive_sales": 3400,
+        "mean": 8208.334411764707,
+        "median": 6840.0,
+        "std": 6228.870412262629,
+        "p05": 1533.75,
+        "p95": 19440.899999999983,
+        "n_stores": 1115
+      }
+    ],
+    "StoreType": [
+      {
+        "StoreType": "a",
+        "rows": 526343,
+        "open_share": 0.8271849345388843,
+        "mean_sales_all_rows": 5730.410819560629,
+        "open_rows_positive_sales": 435348,
+        "mean": 6928.162348282293,
+        "median": 6288.0,
+        "std": 3278.715431419739,
+        "p05": 2943.0,
+        "p95": 13027.0,
+        "n_stores": 602
+      },
+      {
+        "StoreType": "b",
+        "rows": 15116,
+        "open_share": 0.9823365969833289,
+        "mean_sales_all_rows": 10023.419356972745,
+        "open_rows_positive_sales": 14846,
+        "mean": 10205.712447797387,
+        "median": 9108.0,
+        "std": 5172.601512850216,
+        "p05": 3665.25,
+        "p95": 19849.5,
+        "n_stores": 17
+      },
+      {
+        "StoreType": "c",
+        "rows": 130624,
+        "open_share": 0.8241211415972562,
+        "mean_sales_all_rows": 5715.12989955904,
+        "open_rows_positive_sales": 107640,
+        "mean": 6935.461984392419,
+        "median": 6410.0,
+        "std": 2907.0609628379307,
+        "p05": 3332.0,
+        "p95": 12349.049999999988,
+        "n_stores": 148
+      },
+      {
+        "StoreType": "d",
+        "rows": 298296,
+        "open_share": 0.825448547751227,
+        "mean_sales_all_rows": 5624.810148309062,
+        "open_rows_positive_sales": 246222,
+        "mean": 6814.412879434007,
+        "median": 6389.0,
+        "std": 2556.522009092468,
+        "p05": 3527.0,
+        "p95": 11478.0,
+        "n_stores": 348
+      }
+    ],
+    "Assortment": [
+      {
+        "Assortment": "a",
+        "rows": 512539,
+        "open_share": 0.8263761391816037,
+        "mean_sales_all_rows": 5476.203502562732,
+        "open_rows_positive_sales": 423516,
+        "mean": 6627.300661604284,
+        "median": 6088.0,
+        "std": 2976.153930433738,
+        "p05": 2975.0,
+        "p95": 11966.0,
+        "n_stores": 593
+      },
+      {
+        "Assortment": "b",
+        "rows": 7916,
+        "open_share": 0.9896412329459323,
+        "mean_sales_all_rows": 8499.729282465893,
+        "open_rows_positive_sales": 7831,
+        "mean": 8591.987868726856,
+        "median": 8019.0,
+        "std": 3819.118575198165,
+        "p05": 3329.0,
+        "p95": 15556.0,
+        "n_stores": 9
+      },
+      {
+        "Assortment": "c",
+        "rows": 449924,
+        "open_share": 0.8284199109182884,
+        "mean_sales_all_rows": 6041.054491425219,
+        "open_rows_positive_sales": 372709,
+        "mean": 7292.5939566793395,
+        "median": 6667.0,
+        "std": 3186.2242340939697,
+        "p05": 3460.0,
+        "p95": 13278.599999999977,
+        "n_stores": 513
+      }
+    ]
+  },
+  "promo": {
+    "weekday_promo_share_autocorrelation": {
+      "lag_1": 1.0,
+      "lag_7": -0.8055039098026209,
+      "lag_14": 0.5877350940376151,
+      "lag_28": 0.29101895367453373
+    },
+    "monday_promo_flip_rate_vs_previous_monday": 0.9005813740904604,
+    "monday_pairs_compared": 136745,
+    "label": "naive descriptive difference, NOT a promotion effect",
+    "promo_share_all_rows": 0.38269068065158046,
+    "promo_share_open_rows": 0.4479424456852918,
+    "promo_share_by_dayofweek": {
+      "1": 0.539082874529122,
+      "2": 0.5341646638939658,
+      "3": 0.5341608202914193,
+      "4": 0.5334698717257734,
+      "5": 0.5334698717257734,
+      "6": 0.0,
+      "7": 0.0
+    },
+    "open_positive_rows": {
+      "promo": 360174,
+      "no_promo": 443882
+    },
+    "mean_sales_promo": 8216.43812990388,
+    "mean_sales_no_promo": 5931.125249503247,
+    "median_sales_promo": 7636.0,
+    "median_sales_no_promo": 5456.0,
+    "ratio_of_means": 1.3853084843541343,
+    "by_dayofweek": [
+      {
+        "DayOfWeek": 1,
+        "n_promo": 73901,
+        "n_no_promo": 56974,
+        "mean_promo": 9761.897024397505,
+        "mean_no_promo": 6211.4560501281285
+      },
+      {
+        "DayOfWeek": 2,
+        "n_promo": 73773,
+        "n_no_promo": 63500,
+        "mean_promo": 8246.673132446831,
+        "mean_no_promo": 5717.304330708662
+      },
+      {
+        "DayOfWeek": 3,
+        "n_promo": 72910,
+        "n_no_promo": 62330,
+        "mean_promo": 7677.893402825402,
+        "mean_no_promo": 5609.472918337879
+      },
+      {
+        "DayOfWeek": 4,
+        "n_promo": 70777,
+        "n_no_promo": 57169,
+        "mean_promo": 7595.303262359241,
+        "mean_no_promo": 5739.979639315014
+      },
+      {
+        "DayOfWeek": 5,
+        "n_promo": 68813,
+        "n_no_promo": 63139,
+        "mean_promo": 7733.765872727537,
+        "mean_no_promo": 6358.699409239931
+      },
+      {
+        "DayOfWeek": 6,
+        "n_promo": 0,
+        "n_no_promo": 137370,
+        "mean_promo": null,
+        "mean_no_promo": 5886.3056999344835
+      },
+      {
+        "DayOfWeek": 7,
+        "n_promo": 0,
+        "n_no_promo": 3400,
+        "mean_promo": null,
+        "mean_no_promo": 8208.334411764707
+      }
+    ]
+  },
+  "holidays": {
+    "school_holiday_share_all_rows": 0.17864666946517382,
+    "school_holiday_share_by_year": {
+      "2013": 0.18877373001715098,
+      "2014": 0.18620053229193137,
+      "2015": 0.14926389711481514
+    },
+    "dates_with_any_school_holiday_store": 478,
+    "state_holiday_rows": {
+      "0": 986159,
+      "a": 20260,
+      "b": 6690,
+      "c": 4100
+    },
+    "state_holiday_distinct_dates": {
+      "a": 27,
+      "b": 6,
+      "c": 4
+    },
+    "state_holiday_open_share": {
+      "0": 0.855320490914751,
+      "a": 0.034254689042448175,
+      "b": 0.021674140508221227,
+      "c": 0.01731707317073171
+    },
+    "state_holiday_dates": {
+      "a": [
+        "2013-01-01",
+        "2013-01-06",
+        "2013-05-01",
+        "2013-05-09",
+        "2013-05-20",
+        "2013-05-30",
+        "2013-08-15",
+        "2013-10-03",
+        "2013-10-31",
+        "2013-11-01",
+        "2013-11-20",
+        "2014-01-01",
+        "2014-01-06",
+        "2014-05-01",
+        "2014-05-29",
+        "2014-06-09",
+        "2014-06-19",
+        "2014-10-03",
+        "2014-10-31",
+        "2014-11-01",
+        "2014-11-19",
+        "2015-01-01",
+        "2015-01-06",
+        "2015-05-01",
+        "2015-05-14",
+        "2015-05-25",
+        "2015-06-04"
+      ],
+      "b": [
+        "2013-03-29",
+        "2013-04-01",
+        "2014-04-18",
+        "2014-04-21",
+        "2015-04-03",
+        "2015-04-06"
+      ],
+      "c": [
+        "2013-12-25",
+        "2013-12-26",
+        "2014-12-25",
+        "2014-12-26"
+      ]
+    },
+    "naive_mean_sales_open_positive_by_state_holiday": {
+      "0": 6952.722506244195,
+      "a": 8487.471181556197,
+      "b": 9887.889655172414,
+      "c": 9743.74647887324
+    },
+    "naive_mean_sales_open_positive_school_holiday": {
+      "0": 6906.570441112377,
+      "1": 7164.979019721462
+    },
+    "contrast_label": "naive descriptive, not an effect"
+  },
+  "store_attributes": {
+    "n_stores": 1115,
+    "competition_distance_missing": 3,
+    "competition_open_since_month_missing": 354,
+    "competition_open_since_year_missing": 354,
+    "promo2_stores": 571,
+    "promo2_stores_missing_since_week_or_year": 0,
+    "non_promo2_stores_with_promo_interval": 0,
+    "promo_interval_counts": {
+      "<NA>": 544,
+      "Jan,Apr,Jul,Oct": 335,
+      "Feb,May,Aug,Nov": 130,
+      "Mar,Jun,Sept,Dec": 106
+    },
+    "store_type_counts": {
+      "a": 602,
+      "b": 17,
+      "c": 148,
+      "d": 348
+    },
+    "assortment_counts": {
+      "a": 593,
+      "b": 9,
+      "c": 513
+    },
+    "competition_distance": {
+      "n": 1112,
+      "mean": 5404.90087890625,
+      "std": 7663.1748046875,
+      "min": 20.0,
+      "p1": 50.0,
+      "p5": 140.0,
+      "p25": 717.5,
+      "p50": 2325.0,
+      "p75": 6882.5,
+      "p95": 20144.50000000001,
+      "p99": 35144.70000000012,
+      "max": 75860.0
+    }
+  },
+  "outliers": {
+    "scope": "open days with Sales > 0",
+    "global_q1": 4856.0,
+    "global_q3": 8360.0,
+    "upper_fence_1.5iqr": 13616.0,
+    "upper_fence_3iqr": 18872.0,
+    "n_above_1.5iqr_fence": 29307,
+    "n_above_3iqr_fence": 5698,
+    "max_sales": 38722,
+    "max_sales_store": 262,
+    "max_sales_date": "2015-04-03",
+    "p99": 17803.0,
+    "p999": 24684.89000000013,
+    "per_store_robust_z_threshold": 5.0,
+    "n_robust_z_high": 40,
+    "n_robust_z_low": 430,
+    "stores_with_robust_z_high": 26,
+    "stores_with_robust_z_low": 136,
+    "robust_z_definition": "(log(sales) - store median of log(sales)) / (1.4826 * store MAD of log(sales))"
+  },
+  "seasonality": {
+    "index_definition": "sales / store mean over its open positive-sales days in scope",
+    "dow_index": {
+      "1": 1.1873646457408948,
+      "2": 1.0212484950057563,
+      "3": 0.9699062308229748,
+      "4": 0.9753809210766424,
+      "5": 1.0211573484034489,
+      "6": 0.8351265328172583,
+      "7": 0.8936809116250881
+    },
+    "month_index": {
+      "1": 0.9453970294036514,
+      "2": 0.9482439734531803,
+      "3": 1.0045429696630723,
+      "4": 1.0147472706545138,
+      "5": 1.0222908975011606,
+      "6": 1.011972560428545,
+      "7": 0.9928473307321068,
+      "8": 0.9539289913217626,
+      "9": 0.9394261897273403,
+      "10": 0.9473831915854307,
+      "11": 1.0313460967452739,
+      "12": 1.2358060406286973
+    },
+    "month_n_years": {
+      "1": 3,
+      "2": 3,
+      "3": 3,
+      "4": 3,
+      "5": 3,
+      "6": 3,
+      "7": 2,
+      "8": 2,
+      "9": 2,
+      "10": 2,
+      "11": 2,
+      "12": 2
+    },
+    "week_of_year_index_min": {
+      "week": 42,
+      "value": 0.7888737137206667
+    },
+    "week_of_year_index_max": {
+      "week": 51,
+      "value": 1.573294740787966
+    },
+    "daily_mean_index_autocorrelation": {
+      "lag_1": 0.7733595400272526,
+      "lag_7": -0.12338068585945687,
+      "lag_14": 0.5595599384886821,
+      "lag_28": 0.44066704232888515,
+      "lag_364": 0.597670521257701
+    },
+    "daily_series_days": 900,
+    "daily_series_days_excluded_sparse_open": 157,
+    "daily_series_rule": "days with fewer than half of the stores open are excluded (NaN), not interpolated"
+  },
+  "known_in_advance": {
+    "yes": [
+      "Store attributes",
+      "Date/DayOfWeek",
+      "StateHoliday",
+      "SchoolHoliday",
+      "Promo (planned, assumed)"
+    ],
+    "partly": [
+      "Open"
+    ],
+    "no": [
+      "Sales (target)",
+      "Customers"
+    ]
+  }
+}

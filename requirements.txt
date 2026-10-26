@@ -1,0 +1,10 @@
+pandas==2.3.3
+numpy==2.2.6
+scipy==1.15.3
+statsmodels==0.15.0
+pyarrow==25.0.1
+scikit-learn==1.7.2
+lightgbm==4.7.0
+plotly==7.1.0
+streamlit==1.65.0
+pytest==9.1.1
