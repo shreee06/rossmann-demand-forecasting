@@ -1,0 +1,254 @@
+{
+  "fold": 8,
+  "baseline_wape": 0.09026548716574347,
+  "repeats": 3,
+  "features": {
+    "horizon": {
+      "gain_share": 0.00046597626700372767,
+      "permutation_wape_increase": 4.5887691717423164e-05
+    },
+    "dow": {
+      "gain_share": 0.003685308844775343,
+      "permutation_wape_increase": 0.00132190537857003
+    },
+    "day_of_month": {
+      "gain_share": 0.019773515998620643,
+      "permutation_wape_increase": 0.0152666011620503
+    },
+    "week_of_year": {
+      "gain_share": 0.030941176718305336,
+      "permutation_wape_increase": -0.0013840117460266893
+    },
+    "month": {
+      "gain_share": 0.015066329241408735,
+      "permutation_wape_increase": 4.1790336795114826e-05
+    },
+    "state_code": {
+      "gain_share": 0.00043501184517927554,
+      "permutation_wape_increase": 0.0004953454856177301
+    },
+    "school_flag": {
+      "gain_share": 0.0001842741736948608,
+      "permutation_wape_increase": 0.00012282687998853756
+    },
+    "days_to_state": {
+      "gain_share": 0.010286094472808429,
+      "permutation_wape_increase": 0.013789691839931695
+    },
+    "days_since_state": {
+      "gain_share": 0.015630502484474704,
+      "permutation_wape_increase": 0.01583880791638832
+    },
+    "days_to_school": {
+      "gain_share": 0.0010844050437562264,
+      "permutation_wape_increase": -0.0007984532166848274
+    },
+    "days_since_school": {
+      "gain_share": 0.0025355697711565333,
+      "permutation_wape_increase": 0.0007252637993344033
+    },
+    "promo": {
+      "gain_share": 0.002652612878320168,
+      "permutation_wape_increase": 0.00726922215807449
+    },
+    "promo_m1": {
+      "gain_share": 0.00032492534880533,
+      "permutation_wape_increase": 0.000455070278330999
+    },
+    "promo_p1": {
+      "gain_share": 0.0012832736164337644,
+      "permutation_wape_increase": 0.0008360588884842868
+    },
+    "promo_m7": {
+      "gain_share": 0.0008776528300186186,
+      "permutation_wape_increase": 0.0014178517335895248
+    },
+    "promo_p7": {
+      "gain_share": 0.0003813641700588959,
+      "permutation_wape_increase": 0.00031543792784236024
+    },
+    "promo2_active": {
+      "gain_share": 0.0003098155013798421,
+      "permutation_wape_increase": -7.287231068736633e-05
+    },
+    "promo2_weeks": {
+      "gain_share": 0.001159311850525283,
+      "permutation_wape_increase": 0.00035040982607993654
+    },
+    "store_type": {
+      "gain_share": 0.0008372999766490092,
+      "permutation_wape_increase": 0.0006763242971511615
+    },
+    "assortment": {
+      "gain_share": 0.0008718619747051736,
+      "permutation_wape_increase": 0.00033506686673388336
+    },
+    "comp_distance": {
+      "gain_share": 0.002204209550853539,
+      "permutation_wape_increase": 0.0005520561152823622
+    },
+    "comp_open_months": {
+      "gain_share": 0.0013445331185979099,
+      "permutation_wape_increase": 0.00043332808604200357
+    },
+    "mean_28": {
+      "gain_share": 0.0011355222539605153,
+      "permutation_wape_increase": 0.010380117826748752
+    },
+    "mean_56": {
+      "gain_share": 0.0003215154874306626,
+      "permutation_wape_increase": -0.0002767557866016808
+    },
+    "mean_91": {
+      "gain_share": 0.0006392888888224894,
+      "permutation_wape_increase": 0.005557662048091656
+    },
+    "median_28": {
+      "gain_share": 0.002079922118148476,
+      "permutation_wape_increase": 0.0035955213177093076
+    },
+    "median_56": {
+      "gain_share": 0.00025831190728612487,
+      "permutation_wape_increase": 0.0008162221609491251
+    },
+    "median_91": {
+      "gain_share": 0.0044884054786541,
+      "permutation_wape_increase": 0.013718185579783104
+    },
+    "swd_mean_4": {
+      "gain_share": 0.0017194510458966074,
+      "permutation_wape_increase": 0.0018323386967392108
+    },
+    "swd_mean_8": {
+      "gain_share": 0.00377450244861751,
+      "permutation_wape_increase": 0.0014595991934884488
+    },
+    "swd_mean_12": {
+      "gain_share": 0.004067195502796058,
+      "permutation_wape_increase": 0.009675522450767115
+    },
+    "lag7": {
+      "gain_share": 0.0013333804680571092,
+      "permutation_wape_increase": 0.0011130277378210939
+    },
+    "lag14": {
+      "gain_share": 0.003789923529099694,
+      "permutation_wape_increase": 0.003121755725444384
+    },
+    "days_since_closure": {
+      "gain_share": 0.0013226849460683317,
+      "permutation_wape_increase": 0.00017611886912110206
+    },
+    "frac_missing_91": {
+      "gain_share": 0.00022636812016345046,
+      "permutation_wape_increase": -2.0652465187227336e-05
+    },
+    "frac_closed_91": {
+      "gain_share": 0.002396058126428107,
+      "permutation_wape_increase": 0.0002634015001303687
+    },
+    "n_obs_91": {
+      "gain_share": 0.0008417639814252385,
+      "permutation_wape_increase": 0.00013364252699951673
+    },
+    "swp_mean_4": {
+      "gain_share": 0.08640489325157122,
+      "permutation_wape_increase": 0.026990777572290344
+    },
+    "swp_mean_8": {
+      "gain_share": 0.1373207533553581,
+      "permutation_wape_increase": 0.02049798646895448
+    },
+    "swp_mean_12": {
+      "gain_share": 0.6341617359641232,
+      "permutation_wape_increase": 0.166411874214945
+    },
+    "swp_n_12": {
+      "gain_share": 0.001383297448561739,
+      "permutation_wape_increase": -0.00031639018336564645
+    }
+  },
+  "groups": {
+    "horizon": {
+      "features": [
+        "horizon"
+      ],
+      "permutation_wape_increase": 4.089819825652911e-05,
+      "gain_share": 0.00046597626700372767
+    },
+    "calendar": {
+      "features": [
+        "dow",
+        "day_of_month",
+        "week_of_year",
+        "month"
+      ],
+      "permutation_wape_increase": 0.014077776652768145,
+      "gain_share": 0.06946633080311006
+    },
+    "holiday": {
+      "features": [
+        "state_code",
+        "school_flag",
+        "days_to_state",
+        "days_since_state",
+        "days_to_school",
+        "days_since_school"
+      ],
+      "permutation_wape_increase": 0.028177712829665847,
+      "gain_share": 0.030155857791070027
+    },
+    "promo (flags, Promo2, promo-matched history)": {
+      "features": [
+        "promo",
+        "promo_m1",
+        "promo_p1",
+        "promo_m7",
+        "promo_p7",
+        "promo2_active",
+        "promo2_weeks",
+        "swp_mean_4",
+        "swp_mean_8",
+        "swp_mean_12",
+        "swp_n_12"
+      ],
+      "permutation_wape_increase": 0.24922857804270737,
+      "gain_share": 0.8662596362151561
+    },
+    "store attributes": {
+      "features": [
+        "store_type",
+        "assortment",
+        "comp_distance",
+        "comp_open_months"
+      ],
+      "permutation_wape_increase": 0.0017292098148159463,
+      "gain_share": 0.005257904620805632
+    },
+    "history (all)": {
+      "features": [
+        "mean_28",
+        "mean_56",
+        "mean_91",
+        "median_28",
+        "median_56",
+        "median_91",
+        "swd_mean_4",
+        "swd_mean_8",
+        "swd_mean_12",
+        "lag7",
+        "lag14",
+        "days_since_closure",
+        "frac_missing_91",
+        "frac_closed_91",
+        "n_obs_91",
+        "swp_mean_4",
+        "swp_mean_8",
+        "swp_mean_12",
+        "swp_n_12"
+      ],
+      "permutation_wape_increase": 0.3099179330616015,
+      "gain_share": 0.8876649743224686
+    }
+  }
+}

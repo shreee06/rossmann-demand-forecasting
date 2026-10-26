@@ -1,0 +1,20 @@
+{
+  "rows_built": 4103586,
+  "rows_written": 1878291,
+  "cutoffs": 110,
+  "eval_cutoff_indices": [
+    521,
+    563,
+    605,
+    647,
+    689,
+    731,
+    773,
+    815,
+    857
+  ],
+  "rows_kept_for_training_subsample": 821545,
+  "seconds": 9.754984855651855,
+  "first_cutoff_index": 94,
+  "last_cutoff_index": 857
+}

@@ -3,8 +3,8 @@
 Portfolio project: forecast daily store sales for the Rossmann drugstore chain with a fixed time-based
 evaluation protocol. This repository ships **code and aggregate results only**.
 
-> Status: setup, data audit, fixed windows, forecast protocol, evaluation harness and baselines are done.
-> The TEST window has not been touched.
+> Status: setup, data audit, fixed windows, forecast protocol, evaluation harness, baselines, a global LightGBM with
+> prediction intervals and a promotion analysis are done. The TEST window has not been touched (reserved for Step 4).
 
 ## Overview
 
@@ -33,6 +33,7 @@ and `tests/test_leakage.py` fails if a Customers-derived column or a module touc
   `a`/`b`/`c`). It is read as string, normalised, and stored as a categorical over exactly `{0, a, b, c}`;
   unknown or missing values raise an error.
 - Forecast protocol (fixed before any baseline was run): [`docs/forecast_protocol.md`](docs/forecast_protocol.md).
+- Model protocol (fixed before any model was trained): [`docs/model_protocol.md`](docs/model_protocol.md).
 - Audit of the data: [`docs/data_audit.md`](docs/data_audit.md) (generated; numbers in `evals/results/data_audit.json`).
 
 ## Reproduce
@@ -45,6 +46,8 @@ python scripts/make_windows.py   # evals/results/windows.json
 python scripts/audit_data.py     # docs/data_audit.md + evals/results/data_audit.json
 python scripts/run_baselines.py --stage backtest     # 8 rolling-origin folds, tuning on folds only
 python scripts/run_baselines.py --stage validation   # one confirmation run on VALIDATION (no tuning)
+python scripts/run_model.py --stage features      # then: grid, ablations, quantiles, analysis, report
+python scripts/run_model.py --stage validation    # ONE run on VALIDATION with the frozen configuration
 python -m pytest
 ```
 
@@ -55,6 +58,12 @@ python -m pytest
 Metrics (RMSPE, WAPE, MASE, bias), store-clustered bootstrap CIs, the backtest runner and five baselines live in
 `src/demand_forecast/`. Reports: `evals/results/baselines_backtest.md` and `baselines_validation.md`; every configuration
 tried is in `evals/results/spec_log.csv`. Headline numbers are in those reports only.
+
+### Model, intervals and promotion analysis
+
+One global LightGBM with the forecast horizon as a feature, 80% intervals from quantile models, and a promotion analysis that
+is explicitly an *association* (Rossmann chose the promo timing). Reports: `evals/results/model_backtest.md`,
+`model_validation.md`, `intervals.md`, `promo_analysis.md`, and `snaive_bias_diagnostic.md`.
 
 ## Limitations
 

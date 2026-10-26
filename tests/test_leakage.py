@@ -46,7 +46,8 @@ def test_no_other_module_references_customers():
     assert offenders == [], f"modules reference Customers: {offenders}; review for leakage and extend the allow-list deliberately"
 
 
-NEW_MODULES = ["metrics.py", "bootstrap.py", "backtest.py", "baselines.py"]
+NEW_MODULES = ["metrics.py", "bootstrap.py", "backtest.py", "baselines.py", "evaluation.py", "model_features.py", "gbm.py",
+               "intervals.py", "promo_analysis.py"]
 
 
 @pytest.mark.parametrize("name", NEW_MODULES)

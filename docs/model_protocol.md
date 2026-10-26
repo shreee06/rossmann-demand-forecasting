@@ -164,4 +164,30 @@ baseline. Nothing is tuned or re-selected on it. The selected configuration is f
 
 ## 12. Amendments
 
-_(none yet)_
+**2026-10-26 - Part B result (seasonal-naive over-forecast on VALIDATION).** Source: `evals/results/snaive_bias_diagnostic.md`
+(pre-registered holiday splits in section 9; the promo-state and Saturday cuts below were added afterwards and are labelled
+exploratory in that file). No model design decision in this protocol depends on it.
+
+- **Holidays do not explain it.** Seasonal naive 7, VALIDATION: overall Bias +0.1145. Rows whose target day and source day
+  are both ordinary (91.0% of rows) have Bias +0.1228 and contribute +0.1114 of the +0.1145; rows with a holiday-affected
+  target or source day (9.0%) contribute +0.0030; the 152 state-holiday target rows (0.4%) have Bias +0.0023 with a CI
+  that spans zero. No source day falls on a state or school holiday flag. Seasonal naive 14 behaves the same way.
+- **What the numbers do show (exploratory).** Every target day copies a source day from the single week before the
+  cutoff (2015-05-02..2015-05-08). (a) Source day promo and target day non-promo: 38.8% of rows, Bias +0.2473
+  (contribution +0.0858); for seasonal naive 14 the same group has Bias +0.3455 (contribution +0.1199 of +0.1217).
+  (b) Saturdays: the target Saturdays all copy 2015-05-02, whose mean sales per open store (7,861) is above every other
+  Saturday in 2015-04-11..2015-06-13 (5,655-6,768); Bias on Saturday targets is +0.2836 (contribution +0.0426). Where
+  source and target are both promo days the Bias is slightly negative (-0.0273). In the backtest folds the sign of the
+  mismatch varies (source non-promo to target promo gives about -0.26), which is why the Bias of seasonal naive 7 pooled over
+  all backtest rows is -0.049 instead. The VALIDATION bias is therefore a property of which single week the last cutoff
+  happened to copy, not a general over-forecasting tendency. Why 2015-05-02 was high is not examined here.
+
+**2026-10-26 - Feature-table storage and subsample seeding (made after committing this protocol, before any model was trained).**
+The first attempt to hold the whole table in memory was stopped by the memory watchdog (about 3 GB of RAM were available).
+The table is now written per cutoff (streaming) and only rows that some fold can use are kept: `Sales > 0` and (a member of
+the fixed-seed 20% training subsample, or in an evaluation cutoff or in an early-stopping holdout cutoff, which are kept
+in full). The subsample draw is seeded per cutoff with `(20260101, cutoff index)` rather than from one global draw, so it does
+not depend on which cutoffs are built. The columns that switch the Promo flag of the target day (`swp1_*`, `swp0_*`) are
+stored only for evaluation-cutoff rows. Row sets used by every fold (train, inner, holdout, evaluation) are identical to
+those of the full table (tested in `tests/test_gbm.py` and `tests/test_model_features.py`). No hyperparameter, feature or
+selection rule changed.
