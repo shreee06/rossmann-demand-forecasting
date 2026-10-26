@@ -1,0 +1,15 @@
+{
+  "rows": 841053,
+  "last_target_date": "2015-06-19",
+  "cutoffs": 115,
+  "trees": {
+    "full": 1106,
+    "q10": 1500,
+    "q90": 206
+  },
+  "config": {
+    "num_leaves": 63,
+    "min_child_samples": 50
+  },
+  "seconds": 268.99574089050293
+}

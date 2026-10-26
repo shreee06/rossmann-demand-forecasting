@@ -8,7 +8,7 @@
   report     model_backtest / intervals / promo_analysis (.json, .md)
   validation ONE run on VALIDATION: selected model, its quantile models and the best baseline
 
-The TEST window is never loaded; Customers is never read (explicit column lists).
+The TEST window is never loaded; the leakage column named in the README is never read (explicit column lists).
 """
 import os
 

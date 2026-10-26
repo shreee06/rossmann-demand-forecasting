@@ -47,7 +47,7 @@ def test_no_other_module_references_customers():
 
 
 NEW_MODULES = ["metrics.py", "bootstrap.py", "backtest.py", "baselines.py", "evaluation.py", "model_features.py", "gbm.py",
-               "intervals.py", "promo_analysis.py"]
+               "intervals.py", "promo_analysis.py", "calibration.py", "final.py"]
 
 
 @pytest.mark.parametrize("name", NEW_MODULES)
@@ -68,3 +68,14 @@ def test_modelling_frame_loader_reads_an_explicit_column_list_without_customers(
     out = backtest.load_modelling_frame(p)
     assert not [c for c in out.columns if "customers" in c.lower()]
     assert list(out.columns) == backtest.HISTORY_COLUMNS
+
+
+# scripts and app: only these may mention the word (audit text / README wording of the leakage rule)
+SCRIPT_ALLOW = {"audit_data.py", "make_readme.py"}
+
+
+def test_scripts_and_app_never_mention_customers():
+    root = SRC.parents[1]
+    files = list((root / "scripts").glob("*.py")) + list((root / "app").glob("*.py"))
+    offenders = [p.name for p in files if p.name not in SCRIPT_ALLOW and "customers" in p.read_text().lower()]
+    assert offenders == []

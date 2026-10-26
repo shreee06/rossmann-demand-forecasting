@@ -37,9 +37,9 @@ def validation_split():
     return Split("validation", w["train"][1], *w["validation"])
 
 
-def assert_split_allowed(split: Split):
+def assert_split_allowed(split: Split, allow_test: bool = False):
     test_start = make_windows()["test"][0]
-    if split.horizon_end >= test_start:
+    if split.horizon_end >= test_start and not allow_test:
         raise ValueError(f"split {split.fold} reaches the TEST window ({test_start.date()})")
     if not split.cutoff < split.horizon_start:
         raise ValueError("cutoff must precede the horizon")
@@ -56,12 +56,13 @@ def restrict_to_modelling_period(df: pd.DataFrame) -> pd.DataFrame:
     return df[df["Date"] < test_start].reset_index(drop=True)
 
 
-def run_splits(forecaster, frame: pd.DataFrame, store: pd.DataFrame, splits, store_ids=None):
+def run_splits(forecaster, frame: pd.DataFrame, store: pd.DataFrame, splits, store_ids=None, allow_test: bool = False):
+    """allow_test is only set by the one-shot TEST script (docs/final_protocol.md section 4)."""
     """Run a forecaster over splits. Returns (evaluated-row predictions, per-split diagnostics list)."""
     store_type = store.set_index("Store")["StoreType"].astype(str)
     out, diags = [], []
     for sp in splits:
-        assert_split_allowed(sp)
+        assert_split_allowed(sp, allow_test)
         history = frame[frame["Date"] <= sp.cutoff][HISTORY_COLUMNS]
         target = frame[(frame["Date"] >= sp.horizon_start) & (frame["Date"] <= sp.horizon_end)]
         future = target[FUTURE_COLUMNS].copy()
