@@ -134,3 +134,17 @@ latest `run_id`.
 - **Performance outside this retailer, period or horizon.** One chain, 2013-2015, 42-day horizon, with `Open` and
   `Promo` known for the target days.
 - **Unplanned closures and demand on closed days.** They are outside the evaluated rows by construction.
+
+## 7. Amendments
+
+**2026-10-26 (after the first backtest run, before the validation run).** Diagnostics only; baseline definitions,
+metrics, tuning grids and the selection rule are unchanged.
+
+- Added a **post-hoc** breakdown "row coverage": a store is *sparse* when it has fewer than 100 rows in the 200 days
+  before the cutoff (this is meant to flag stores that have just come back after the Jul-Dec 2014 gap). It was added
+  because the pre-registered *stale* flag (section 2) covered very few evaluated rows. Both are reported.
+- Added two descriptive tables: fold-to-fold spread of the per-fold metrics, and the share of the summed squared
+  percentage error that comes from the worst 0.1% of rows in each fold (to explain RMSPE instability).
+- Thread limits: the first backtest run did not cap BLAS/OpenMP threads, so the 2-worker limit was not respected and
+  the ETS timing probe (used for the 30-minute skip rule) was invalid; it was re-run with threads capped at 1. The
+  deterministic baselines gave identical metrics in both runs. Both runs remain in `spec_log.csv`.

@@ -1,0 +1,21 @@
+{
+  "run_id": "20261026T180139",
+  "selected": {
+    "seasonal_naive_7": {
+      "period": 7
+    },
+    "seasonal_naive_14": {
+      "period": 14
+    },
+    "promo_weekday_mean": {
+      "K": 12
+    },
+    "store_median_x_index": {
+      "L": 52
+    },
+    "ets_additive_seasonal": {
+      "m": 7
+    }
+  },
+  "skipped": {}
+}

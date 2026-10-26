@@ -3,7 +3,8 @@
 Portfolio project: forecast daily store sales for the Rossmann drugstore chain with a fixed time-based
 evaluation protocol. This repository ships **code and aggregate results only**.
 
-> Status: setup, data audit and fixed evaluation windows are done. No forecasting model has been fitted yet.
+> Status: setup, data audit, fixed windows, forecast protocol, evaluation harness and baselines are done.
+> The TEST window has not been touched.
 
 ## Overview
 
@@ -31,6 +32,7 @@ and `tests/test_leakage.py` fails if a Customers-derived column or a module touc
 - `StateHoliday` is a mixed-type column (the "no holiday" value appears as int `0` or string `"0"`, next to
   `a`/`b`/`c`). It is read as string, normalised, and stored as a categorical over exactly `{0, a, b, c}`;
   unknown or missing values raise an error.
+- Forecast protocol (fixed before any baseline was run): [`docs/forecast_protocol.md`](docs/forecast_protocol.md).
 - Audit of the data: [`docs/data_audit.md`](docs/data_audit.md) (generated; numbers in `evals/results/data_audit.json`).
 
 ## Reproduce
@@ -41,10 +43,18 @@ export ROSSMANN_RAW_DIR=/path/to/rossmann-raw
 python scripts/prepare_data.py   # CSV -> data/processed/*.parquet (untracked)
 python scripts/make_windows.py   # evals/results/windows.json
 python scripts/audit_data.py     # docs/data_audit.md + evals/results/data_audit.json
+python scripts/run_baselines.py --stage backtest     # 8 rolling-origin folds, tuning on folds only
+python scripts/run_baselines.py --stage validation   # one confirmation run on VALIDATION (no tuning)
 python -m pytest
 ```
 
 (If ROS 2 is sourced, prefix with `env -u PYTHONPATH`.) Scripts run a memory watchdog that exits when less than 1 GB is available.
+
+## Evaluation and baselines
+
+Metrics (RMSPE, WAPE, MASE, bias), store-clustered bootstrap CIs, the backtest runner and five baselines live in
+`src/demand_forecast/`. Reports: `evals/results/baselines_backtest.md` and `baselines_validation.md`; every configuration
+tried is in `evals/results/spec_log.csv`. Headline numbers are in those reports only.
 
 ## Limitations
 
